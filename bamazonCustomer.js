@@ -16,7 +16,7 @@ var connection = MYSQL.createConnection({
   
 connection.connect(function(err) {
     if (err) throw err;
-    console.log("connected as id " + connection.threadId);
+    //console.log("connected as id " + connection.threadId);
     displayProducts();
     //startSale();
 });
@@ -59,10 +59,10 @@ function startSale() {
             }
         }
     ]).then(function(answer) {
-        console.log(answer.id);
-        console.log(answer.numOfUnits);
-        answerId = answer.id;
-        answerNum = answer.numOfUnits;
+        //console.log(answer.id);
+        //console.log(answer.numOfUnits);
+        var answerId = answer.id;
+        var answerNum = answer.numOfUnits;
         checkOrder(answerId, answerNum);
 
     });
