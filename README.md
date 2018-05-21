@@ -16,4 +16,6 @@ The Bamazon storefront will appear in the terminal when the customer types *node
 If the customer desires to buy a self-driving car, the id number, 5575, will be typed. The customer will then be prompted to type the number of items they want to purchase. In this case 2.
 * Note that there are 5 self-driving cars available for purchase at this time.
 
+After the purchase is processed, the database is updated to reflect that the inventory of cars is depleted by 2, and now there are only 3 cars in stock. The customer is prompted to buy more items.
+
 ![Alt text](/images/terminal2.png?raw=true "Optional Title")
