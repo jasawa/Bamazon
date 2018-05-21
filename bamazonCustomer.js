@@ -18,14 +18,13 @@ connection.connect(function(err) {
     if (err) throw err;
     //console.log("connected as id " + connection.threadId);
     displayProducts();
-    //startSale();
 });
   
 function displayProducts() {
     connection.query("SELECT * FROM products", function(err, res) {
         console.log("");
         console.log("------ BAMAZON products for sale ---------------");
-        console.log("id   | Dept  |  Product  | Price | Quantity in Stock");
+        console.log("id   | Dept   |  Product   | Price | Quantity in Stock");
         for (var i = 0; i < res.length; i++) {
             console.log(res[i].id + " | " + res[i].dept_name + " | "  + res[i].product_name + " | " + "$" + res[i].price + " | "  + res[i].stock_quantity);
         }
@@ -72,7 +71,7 @@ function checkOrder(id, quantity) {
     connection.query('SELECT * FROM products WHERE id = ' + id, function(err, res) {
         if (err) throw err;
 
-        // checks the order to see that there is enough of the item in stock
+        // checks the order by id number to see that there is enough of the item in stock
      
         if (quantity <= res[0].stock_quantity) {
             console.log("You ordered " + quantity + " " + res[0].product_name);
